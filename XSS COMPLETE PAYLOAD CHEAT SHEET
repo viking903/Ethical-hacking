@@ -1,0 +1,42 @@
+1. BASIC HTML CONTE
+Payload:
+<script>alert(1)</script>
+
+WHERE:
+Search box, comments, profile fields.
+
+WHY:
+Check whether input is rendered as executable HTML.
+
+EXPECTED:
+Browser alert popup if script execution is allowed.
+
+
+2. IMAGE EVENT HANDLER
+
+Payload:
+<img src=x onerror=alert(1)>
+
+WHERE:
+HTML body context.
+
+WHY:
+Test whether an injected element's event handler executes.
+
+EXPECTED:
+Image fails to load and alert appears.
+
+
+3. SVG EVENT HANDLER
+
+Payload:
+<svg onload=alert(1)>
+
+WHERE:
+HTML-rendering input.
+
+WHY:
+Check whether SVG markup and event attributes are allowed.
+
+EXPECTED:
+Alert if browser executes the handler.
